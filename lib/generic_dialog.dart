@@ -29,10 +29,11 @@ Future showGenericDialog(
               ),
             ),
             Padding(
-              padding: const EdgeInsets.only(top: 20.0),
+              padding: const EdgeInsets.only(top: 25.0),
               child: Center(
                 child: Text(
                   title,
+                  textAlign: TextAlign.center,
                   style: const TextStyle(
                     fontSize: 16,
                     fontWeight: FontWeight.bold,
@@ -42,10 +43,11 @@ Future showGenericDialog(
             ),
           ],
         ),
+        contentPadding: const EdgeInsets.only(top: 25, bottom: 30, left: 15, right: 15),
         content: RichText(
           textAlign: TextAlign.center,
           text: const TextSpan(
-            style: TextStyle(color: Colors.black, height: 1.4),
+            style: TextStyle(color: Colors.black, height: 1.5),
             children: [
               TextSpan(
                   text:
@@ -63,10 +65,12 @@ Future showGenericDialog(
             ],
           ),
         ),
+        actionsPadding: EdgeInsets.zero,
         actions: [
           const Divider(
             height: 0,
-            thickness: 2,
+            color: Colors.grey,
+            thickness: 1.5,
           ),
           IntrinsicHeight(
             child: Row(
@@ -89,7 +93,7 @@ Future showGenericDialog(
                   ),
                 ),
                 const VerticalDivider(
-                  thickness: 1,
+                  thickness: 1.5,
                   color: Colors.grey,
                 ),
                 TextButton(
@@ -109,7 +113,6 @@ Future showGenericDialog(
             ),
           ),
         ],
-        actionsPadding: EdgeInsets.zero,
       );
     },
   );
