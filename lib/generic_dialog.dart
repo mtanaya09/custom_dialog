@@ -72,21 +72,23 @@ Future showGenericDialog(
             child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               children: [
-                TextButton(
-                  child: const Text(
-                    "Clear",
-                    style: TextStyle(
-                      color: Colors.black,
-                      fontSize: 16,
-                      fontWeight: FontWeight.bold,
+                Padding(
+                  padding: const EdgeInsets.symmetric(horizontal: 12.0),
+                  child: TextButton(
+                    child: const Text(
+                      "Clear",
+                      style: TextStyle(
+                        color: Colors.black,
+                        fontSize: 16,
+                        fontWeight: FontWeight.bold,
+                      ),
                     ),
+                    onPressed: () {
+                      Navigator.of(context).pop(false);
+                    },
                   ),
-                  onPressed: () {
-                    Navigator.of(context).pop(false);
-                  },
                 ),
                 const VerticalDivider(
-                  // width: 20,
                   thickness: 1,
                   color: Colors.grey,
                 ),
@@ -107,7 +109,7 @@ Future showGenericDialog(
             ),
           ),
         ],
-        actionsPadding: const EdgeInsets.symmetric(horizontal: 12.0),
+        actionsPadding: EdgeInsets.zero,
       );
     },
   );
