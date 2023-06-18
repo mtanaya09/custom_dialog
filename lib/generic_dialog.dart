@@ -64,34 +64,50 @@ Future showGenericDialog(
           ),
         ),
         actions: [
-          Row(
-            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-            children: [
-              TextButton(
-                child: const Text(
-                  "Clear",
-                  style: TextStyle(
-                    fontWeight: FontWeight.bold,
+          const Divider(
+            height: 0,
+            thickness: 2,
+          ),
+          IntrinsicHeight(
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+              children: [
+                TextButton(
+                  child: const Text(
+                    "Clear",
+                    style: TextStyle(
+                      color: Colors.black,
+                      fontSize: 16,
+                      fontWeight: FontWeight.bold,
+                    ),
                   ),
+                  onPressed: () {
+                    Navigator.of(context).pop(false);
+                  },
                 ),
-                onPressed: () {
-                  Navigator.of(context).pop(false);
-                },
-              ),
-              TextButton(
-                child: const Text(
-                  "Continue",
-                  style: TextStyle(
-                    fontWeight: FontWeight.bold,
+                const VerticalDivider(
+                  // width: 20,
+                  thickness: 1,
+                  color: Colors.grey,
+                ),
+                TextButton(
+                  child: const Text(
+                    "Continue",
+                    style: TextStyle(
+                      color: Colors.black,
+                      fontSize: 16,
+                      fontWeight: FontWeight.bold,
+                    ),
                   ),
+                  onPressed: () {
+                    Navigator.of(context).pop(true);
+                  },
                 ),
-                onPressed: () {
-                  Navigator.of(context).pop(true);
-                },
-              ),
-            ],
+              ],
+            ),
           ),
         ],
+        actionsPadding: const EdgeInsets.symmetric(horizontal: 12.0),
       );
     },
   );
